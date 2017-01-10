@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		79B95755EAB74D61205D2857 /* Pods_GeoJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E9BFB3D846109A3EB8890A4 /* Pods_GeoJSON.framework */; };
 		8254690E1E25682A0065B2DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8254690D1E25682A0065B2DC /* AppDelegate.swift */; };
 		825469101E25682A0065B2DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8254690F1E25682A0065B2DC /* ViewController.swift */; };
 		825469131E25682A0065B2DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 825469111E25682A0065B2DC /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E9BFB3D846109A3EB8890A4 /* Pods_GeoJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GeoJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A1EA6B319337F9303F2F8D8 /* Pods-GeoJSON.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoJSON.release.xcconfig"; path = "Pods/Target Support Files/Pods-GeoJSON/Pods-GeoJSON.release.xcconfig"; sourceTree = "<group>"; };
 		8254690A1E25682A0065B2DC /* GeoJSON.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeoJSON.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8254690D1E25682A0065B2DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8254690F1E25682A0065B2DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +25,7 @@
 		825469141E25682A0065B2DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		825469171E25682A0065B2DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		825469191E25682A0065B2DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E127C8191050DCE6D872F80D /* Pods-GeoJSON.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GeoJSON.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GeoJSON/Pods-GeoJSON.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79B95755EAB74D61205D2857 /* Pods_GeoJSON.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12728F8E695EF592B834630A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E9BFB3D846109A3EB8890A4 /* Pods_GeoJSON.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		825469011E25682A0065B2DC = {
 			isa = PBXGroup;
 			children = (
 				8254690C1E25682A0065B2DC /* GeoJSON */,
 				8254690B1E25682A0065B2DC /* Products */,
+				FFBE14F64FA577A8962878EF /* Pods */,
+				12728F8E695EF592B834630A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +79,15 @@
 			path = GeoJSON;
 			sourceTree = "<group>";
 		};
+		FFBE14F64FA577A8962878EF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E127C8191050DCE6D872F80D /* Pods-GeoJSON.debug.xcconfig */,
+				7A1EA6B319337F9303F2F8D8 /* Pods-GeoJSON.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8254691C1E25682A0065B2DC /* Build configuration list for PBXNativeTarget "GeoJSON" */;
 			buildPhases = (
+				D6A97900E8862F58EA1D0B0E /* [CP] Check Pods Manifest.lock */,
 				825469061E25682A0065B2DC /* Sources */,
 				825469071E25682A0065B2DC /* Frameworks */,
 				825469081E25682A0065B2DC /* Resources */,
+				6584A7520BAE56126EFC37EC /* [CP] Embed Pods Frameworks */,
+				E1E66038953F52594AC5FB1A /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,6 +157,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		6584A7520BAE56126EFC37EC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GeoJSON/Pods-GeoJSON-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D6A97900E8862F58EA1D0B0E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1E66038953F52594AC5FB1A /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GeoJSON/Pods-GeoJSON-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		825469061E25682A0065B2DC /* Sources */ = {
@@ -256,6 +331,7 @@
 		};
 		8254691D1E25682A0065B2DC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E127C8191050DCE6D872F80D /* Pods-GeoJSON.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GeoJSON/Info.plist;
@@ -268,6 +344,7 @@
 		};
 		8254691E1E25682A0065B2DC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A1EA6B319337F9303F2F8D8 /* Pods-GeoJSON.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = GeoJSON/Info.plist;
