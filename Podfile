@@ -5,4 +5,5 @@ target ‘GeoJSON’ do
 
   pod 'Alamofire', '~> 4.0'
   pod 'SwiftyJSON'
+  pod ‘GoogleMaps’
 end
