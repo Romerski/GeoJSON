@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ys4-tk-D2Q">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ys4-tk-D2Q">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,9 +24,9 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Menu" id="Ism-pn-aZ7">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="ecl-dO-fs7">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="ecl-dO-fs7">
                             <connections>
-                                <segue destination="J5Q-SX-Qsk" kind="show" identifier="settings" id="aDH-nz-E49"/>
+                                <segue destination="Yvg-8n-tyI" kind="show" id="ibu-NG-gSA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -35,30 +36,126 @@
             <point key="canvasLocation" x="937" y="659"/>
         </scene>
         <!--Settings-->
-        <scene sceneID="rzS-Ad-FoJ">
+        <scene sceneID="p1O-rJ-myE">
             <objects>
-                <viewController id="J5Q-SX-Qsk" sceneMemberID="viewController">
+                <viewController id="Yvg-8n-tyI" customClass="SettingsViewController" customModule="GeoJSON" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="rkk-4x-Q4t"/>
-                        <viewControllerLayoutGuide type="bottom" id="ObG-eR-6rF"/>
+                        <viewControllerLayoutGuide type="top" id="Qw2-c5-L8k"/>
+                        <viewControllerLayoutGuide type="bottom" id="x1F-8s-Xus"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Nbt-mM-vvt">
+                    <view key="view" contentMode="scaleToFill" id="7sc-QL-KJX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="0OS-Ie-pum">
+                                <rect key="frame" x="16" y="79" width="343" height="588"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Ryc-dh-Qvy">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="350"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAJ-eZ-JTs">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DAq-Ij-ET5">
+                                                <rect key="frame" x="0.0" y="25.5" width="343" height="325.5"/>
+                                                <segments>
+                                                    <segment title="Past hour"/>
+                                                    <segment title="Past day"/>
+                                                    <segment title="Past week"/>
+                                                    <segment title="Past month"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="cambiarValor:" destination="Yvg-8n-tyI" eventType="valueChanged" id="aH0-cP-Y0V"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ycL-SI-R09">
+                                        <rect key="frame" x="0.0" y="370" width="343" height="53.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Magnitude" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yF5-pq-OWw">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="659-Vk-fGr">
+                                                <rect key="frame" x="0.0" y="25.5" width="343" height="29"/>
+                                                <segments>
+                                                    <segment title="Significant"/>
+                                                    <segment title="4.5+"/>
+                                                    <segment title="2.5+"/>
+                                                    <segment title="1.0+"/>
+                                                    <segment title="All"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="cambiarMagnitud:" destination="Yvg-8n-tyI" eventType="valueChanged" id="I6p-yP-Zvh"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="8n9-Wh-BuI">
+                                        <rect key="frame" x="0.0" y="443.5" width="343" height="144.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Terms" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v5A-vJ-oWU">
+                                                <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kxc-Ep-1UU">
+                                                <rect key="frame" x="0.0" y="26.5" width="343" height="118"/>
+                                                <mutableString key="text">Magnitude: The magnitude for the event, from 1 to 10. 
+Date: Time when the event occurred.  Status: Indicates whether the event has been reviewed by a human. Status is either automatic or reviewed. Automatic events are directly posted by automatic processing systems and have not been verified or altered by a human. Reviewed events have been looked at by a human. </mutableString>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0OS-Ie-pum" firstAttribute="top" secondItem="Qw2-c5-L8k" secondAttribute="bottom" constant="15" id="NKV-gJ-lpO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0OS-Ie-pum" secondAttribute="trailing" id="b83-eA-7HJ"/>
+                            <constraint firstItem="x1F-8s-Xus" firstAttribute="top" secondItem="0OS-Ie-pum" secondAttribute="bottom" id="f3c-Ms-d7c"/>
+                            <constraint firstItem="0OS-Ie-pum" firstAttribute="leading" secondItem="7sc-QL-KJX" secondAttribute="leadingMargin" id="vuZ-d4-iTO"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Settings" id="hfI-jO-LH2"/>
+                    <navigationItem key="navigationItem" title="Settings" id="EJs-iX-uVK">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="S0Y-oK-Rtk">
+                            <connections>
+                                <action selector="cancel:" destination="Yvg-8n-tyI" id="SoM-Qk-Fj5"/>
+                                <segue destination="ahG-OR-taS" kind="unwind" identifier="cancel" unwindAction="unwindToMenuWithSegue:" id="QTY-ol-nMn"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tiG-p2-1Sx">
+                            <connections>
+                                <action selector="save:" destination="Yvg-8n-tyI" id="J6M-cP-zvt"/>
+                                <segue destination="ahG-OR-taS" kind="unwind" identifier="save" unwindAction="unwindToMenuWithSegue:" id="hiO-fT-Nsf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segment" destination="DAq-Ij-ET5" id="xJ3-3X-Ulr"/>
+                        <outlet property="segment2" destination="659-Vk-fGr" id="TkW-qd-fXl"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zTg-CB-0h7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AR8-FR-1t4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="ahG-OR-taS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1743" y="663"/>
+            <point key="canvasLocation" x="1728.8" y="658.92053973013503"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="BFc-2l-O8G">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ys4-tk-D2Q" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="mul-pC-FEO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mul-pC-FEO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
